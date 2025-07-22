@@ -1,0 +1,10 @@
+
+services:
+  beq_pdfcrawler:
+    container_name: beq_pdfcrawler
+    image: pdfcrawler
+    restart: always
+    volumes:
+      - ./urls.txt:/app/urls.txt:ro           # mount danh sách URL (read-only)
+      - ./output:/app/output                  # thư mục xuất PDF
+      - ./error.log:/app/error.log            # file log lỗi
