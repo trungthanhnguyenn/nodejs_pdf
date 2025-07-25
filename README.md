@@ -27,6 +27,25 @@ python -m src.convert.pdf2txt
 
 - After that, comment out the line 113-115 and run the function again whenever you want to update the dataset.
 
+- Create an `.env` in the root directory using the template below.
+
 ```bash
+touch .env
+echo "HF_TOKEN=your_hf_token" > .env
 python -m src.synthetic.create_update_dataset
+```
+
+## Run uvicorn server for LLM systhetic data
+
+```bash
+bash scripts/run_synthetic_data.sh
+```
+
+- You can test the function using main.py file below
+- Set the 'data_name' to your repo name that uploaded to Hugging Face in step above
+- Run the code in another teminal
+
+```bash
+cd nodejs_pdf
+python main.py
 ```
