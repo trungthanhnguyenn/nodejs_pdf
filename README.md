@@ -18,3 +18,15 @@ pip install -r requirements.txt
 ```bash
 python -m src.convert.pdf2txt
 ```
+
+## Setup CSV file and update to HF dataset
+
+- For the **first time**, you need to run the function to create the CSV file and upload it to HF dataset (uncomment line 113-115 in `src/synthetic/create_update_dataset.py`)
+
+- You can test the function by uncomment the main function in `src/synthetic/create_update_dataset.py`
+
+- After that, comment out the line 113-115 and run the function again whenever you want to update the dataset.
+
+```bash
+python -m src.synthetic.create_update_dataset
+```
