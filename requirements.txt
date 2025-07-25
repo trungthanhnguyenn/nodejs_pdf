@@ -5,3 +5,4 @@ transformers
 torch
 sentencepiece
 huggingface_hub
+hf-xet
