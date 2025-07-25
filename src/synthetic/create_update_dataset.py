@@ -128,10 +128,10 @@ class AutoCreateDataRequest():
         df_merged = df_merged.drop_duplicates(subset=['title'], keep='first')
         print(f"Total rows after removing duplicates: {len(df_merged)}")
         
-        # dataset = Dataset.from_pandas(df_merged)
-        # DatasetDict({"train": dataset}).push_to_hub(repo_id=self.repo_id, max_shard_size="150MB")
+        dataset = Dataset.from_pandas(df_merged)
+        DatasetDict({"train": dataset}).push_to_hub(repo_id=self.repo_id, max_shard_size="150MB")
         
-        # print(f"Upload new data to Hugging Face: {self.repo_id}")   
+        print(f"Upload new data to Hugging Face: {self.repo_id}")   
   
 def check_csv(csv_file: str, index_to_check: int):
   csv.field_size_limit(sys.maxsize)  # ✅ Tăng giới hạn cho ô dữ liệu lớn
@@ -150,15 +150,14 @@ def check_csv(csv_file: str, index_to_check: int):
       else:
           print(f"❌ Index {index_to_check} vượt quá số dòng trong CSV ({len(rows)})")
 
-# check_csv("demo.csv", 301)
-if __name__ == "__main__":
-    # Create a new dataset
-    data = AutoCreateDataRequest(
-        txt_folder="output/txt",
-        output_csv_new="output/csv/demo.csv",
-        error_log_path="logs/error/txts_fail.log",
-        repo_id="trungnguyen2331/law_extract",
-        urls_path="urls.txt",
-    )
-    data.make_new_csv()
-    data.download_compare_update()
+# if __name__ == "__main__":
+#     # Create a new dataset
+#     data = AutoCreateDataRequest(
+#         txt_folder="output/txt",
+#         output_csv_new="output/csv/demo.csv",
+#         error_log_path="logs/error/txts_fail.log",
+#         repo_id="your/hf_repo",
+#         urls_path="urls.txt",
+#     )
+#     data.make_new_csv()
+#     data.download_compare_update()
