@@ -2,3 +2,7 @@ output
 output.zip
 VBPL_raw_url.json
 error.log
+
+# pycache
+__pycache__
+
