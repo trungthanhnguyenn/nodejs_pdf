@@ -1,0 +1,7 @@
+tqdm
+pdftotext
+datasets
+transformers
+torch
+sentencepiece
+huggingface_hub
