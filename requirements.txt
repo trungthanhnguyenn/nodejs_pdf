@@ -12,3 +12,4 @@ fastapi
 pydantic
 icecream
 g4f
+python-dotenv
