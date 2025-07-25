@@ -6,3 +6,9 @@ torch
 sentencepiece
 huggingface_hub
 hf-xet
+uvicorn
+requests
+fastapi
+pydantic
+icecream
+g4f
