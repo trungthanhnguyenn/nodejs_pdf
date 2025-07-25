@@ -2,9 +2,9 @@
 services:
   beq_pdfcrawler:
     container_name: beq_pdfcrawler
-    image: pdfcrawler
+    image: trungthanhnguyenn/pdfcrawler:v1
     restart: always
     volumes:
-      - ./urls.txt:/app/urls.txt:ro           # mount danh sách URL (read-only)
-      - ./output:/app/output                  # thư mục xuất PDF
-      - ./error.log:/app/error.log            # file log lỗi
+      # - ./urls.txt:/app/urls.txt:ro           # Optional: URLs to crawl
+      - ./output:/app/output                  # output for PDF
+      - ./error.log:/app/error.log            # log file
